@@ -1,9 +1,10 @@
 import { deffHttp } from '@/utils/axios';
 
 export interface UseInfoType {
-  name: string;
   userid: string;
   email: string;
+  firstName: string;
+  lastName: string;
   signature: string;
   introduction: string;
   title: string;

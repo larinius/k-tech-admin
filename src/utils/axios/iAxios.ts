@@ -82,28 +82,28 @@ export class iAxios {
   }
 
   /**
-   * @description get请求（config：axios请求配置, options：数据的特殊处理）
+   * @description get 请求（config：axios请求配置, options：数据的特殊处理）
    */
   get<T = any>(config: AxiosRequestConfig, options?: RequestOptions): Promise<Result<T>> {
     return this.request<T>({ ...config, method: 'GET' }, options);
   }
 
   /**
-   * @description post请求（config：axios请求配置, options：数据的特殊处理）
+   * @description post 请求（config：axios请求配置, options：数据的特殊处理）
    */
   post<T = any>(config: AxiosRequestConfig, options?: RequestOptions): Promise<Result<T>> {
     return this.request<T>({ ...config, method: 'POST' }, options);
   }
 
   /**
-   * @description put请求（config：axios请求配置, options：数据的特殊处理）
+   * @description put 请求（config：axios请求配置, options：数据的特殊处理）
    */
   put<T = any>(config: AxiosRequestConfig, options?: RequestOptions): Promise<Result<T>> {
     return this.request<T>({ ...config, method: 'PUT' }, options);
   }
 
   /**
-   * @description delete请求（config：axios请求配置, options：数据的特殊处理）
+   * @description delete 请求（config：axios请求配置, options：数据的特殊处理）
    */
   delete<T = any>(config: AxiosRequestConfig, options?: RequestOptions): Promise<Result<T>> {
     return this.request<T>({ ...config, method: 'DELETE' }, options);

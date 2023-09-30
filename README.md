@@ -4,7 +4,7 @@
 </a>
 </div>
 
-**English** | [中文](./README.CN.md)
+**English**
 
 ## Brief Introduction
 
@@ -20,7 +20,7 @@ The out of the box background template developed based on mainstream technologie
 
 - **Permission**: Permission Routing
 
-## 预览
+## Preview
 
 <img src="https://www.jsxiaosi.com/image/react-xs-admin1.png?max=xiaosi" width="100%">
 
