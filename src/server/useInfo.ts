@@ -10,13 +10,16 @@ export interface UseInfoType {
   title: string;
   token: string;
   power: 'test' | 'admin';
+  tokenExpires: string;
+  refreshToken: string;
+  refreshExpires: string;
 }
 
 export const getUserInfo = (user: string, pwd: string) =>
   deffHttp.post<UseInfoType>(
     {
-      url: '/mock_api/login',
-      data: { username: user, password: pwd },
+      url: `${import.meta.env.VITE_APP_API_BASE}/auth/login`,
+      data: { email: user, password: pwd },
     },
     { errorMessageMode: 'modal', withToken: false },
   );

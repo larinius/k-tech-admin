@@ -5,18 +5,8 @@ import { checkStatus } from './axiosStatus';
 import { errorData } from './errorConfig';
 import { createErrorModal, createErrorMsg } from '@/hooks/web/useMessage';
 
-/**
- * @description:Please change all the interceptor according to your own usage scenario
- */
 const interceptor: AxiosInterceptor = {
-  /**
-   * @description: Process request data.If the data is not an expected format, you can directly throw an error
-   */
   requestHook: (res, options) => {
-    /**
-     * The method here is to process the data requested back,
-     * Change according to your own use scenario
-     */
     const { data } = res;
     const { errorMessageMode } = options;
     if (data) {
@@ -42,27 +32,19 @@ const interceptor: AxiosInterceptor = {
     return data;
   },
 
-  /**
-   * @description: Error handling of request failure
-   */
   requestCatchHook: (e, _options) => {
     return Promise.reject(e);
   },
 
-  /**
-   * @description: Process before request config
-   */
   beforeRequestHook: (config, options) => {
     const { urlPrefix } = options;
     if (urlPrefix && isString(urlPrefix)) config.url = `${urlPrefix}${config.url}`;
     return config;
   },
 
-  /**
-   * @description: Request interceptor processing
-   */
   requestInterceptors: (config) => {
     const { requestOptions } = config;
+
     if (requestOptions?.withToken) {
       (config as Recordable).headers._token = 'myToken';
       if (requestOptions?.specialToken)
@@ -72,23 +54,14 @@ const interceptor: AxiosInterceptor = {
     return config;
   },
 
-  /**
-   * @description: Request interceptor error treatment
-   */
   requestInterceptorsCatch: (error) => {
     return error;
   },
 
-  /**
-   * @description: Response interceptor processing
-   */
   responseInterceptors: (res) => {
     return res;
   },
 
-  /**
-   * @description: Response interceptor error treatment
-   */
   responseInterceptorsCatch: (error: any) => {
     const { response, message, config } = error || {};
     const errorMessageMode = config.requestOptions.errorMessageMode || 'none';

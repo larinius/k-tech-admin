@@ -6,7 +6,7 @@ import { handlePowerRoute, handleRouteList } from './utils';
 import type { AsyncRouteType } from '@/store/modules/route';
 import { useAppSelector } from '@/store/hooks';
 
-// 为“/”根路由添加重定向
+// Add the directional routing to the "/" root routing
 const handleRedirect = (asyncRouter: AsyncRouteType[]) => {
   const routerList = handleRouteList(handlePowerRoute(asyncRouter));
   if (routerList.length) {
@@ -32,7 +32,7 @@ const RouteView = memo(() => {
   const asyncRouter = useAppSelector((state) => state.route.asyncRouter);
   const [route, setRoute] = useState<RouteObject[]>(mapBaseRouter(baseRouter, asyncRouter));
 
-  // 更新路由列表
+  // Update route list
   useEffect(() => {
     setRoute(mapBaseRouter(baseRouter, asyncRouter));
   }, [asyncRouter]);

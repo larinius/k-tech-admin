@@ -50,9 +50,8 @@ const Sidebar = memo(() => {
 
   const menuItems = useMemo(() => {
     if (sidebarMode === 'blend') {
-      // path的父级路由组成的数组
       const parentPathArr = getParentPaths(pathname, menuList);
-      // 当前路由的信息
+
       const parenetRoute = findRouteByPath(parentPathArr[0], menuList);
       if (parenetRoute) {
         if (parenetRoute.children) return parenetRoute.children;

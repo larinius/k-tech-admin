@@ -4,6 +4,7 @@
   "layout.error.500": "抱歉，出了问题。",
   "layout.error.element.content": "页面内容有以下错误:",
   "layout.memu.home": "首页",
+  "layout.memu.post": "New post",
   "layout.memu.nesting": "嵌套页面",
   "layout.memu.permissions": "权限管理",
   "layout.memu.permissionsPage": "权限切换",

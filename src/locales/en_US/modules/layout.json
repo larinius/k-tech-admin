@@ -3,6 +3,7 @@
   "layout.setting.layoutSettings": "Layout Settings",
   "layout.setting.themeSettings": "Theme Settings",
   "layout.memu.home": "Home",
+  "layout.memu.post": "New post",
   "layout.memu.nesting": "Nesting",
   "layout.memu.permissions": "Permissions",
   "layout.memu.permissionsPage": "Permissions Toggle",
