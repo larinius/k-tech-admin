@@ -1,9 +1,9 @@
 import CryptoJS from 'crypto-js';
 import type { StorageConfig, StorageType, StorageValue } from './types';
 
-// 十六位十六进制数作为密钥
+// Sixteen hexadecimal numbers as the key
 const SECRET_KEY = CryptoJS.enc.Utf8.parse('3333e6e143439161');
-// 十六位十六进制数作为密钥偏移量
+// Sixteen hexadecimal numbers are used as key offset
 const SECRET_IV = CryptoJS.enc.Utf8.parse('e3bbe7e3ba84431a');
 
 // 类型 window.localStorage,window.sessionStorage,

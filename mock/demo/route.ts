@@ -6,6 +6,10 @@ const power = [
     id: 'Home',
   },
   {
+    path: '/post',
+    id: 'Post',
+  },
+  {
     path: '/nested',
     id: 'Nested',
     children: [
@@ -84,7 +88,7 @@ export default [
         return {
           data: [],
           code: -1,
-          message: '账号错误',
+          message: 'Account error',
         };
       }
     },

@@ -112,30 +112,27 @@ export function routeListToMenu(rtList: RouteList[], path?: React.Key): MenuItem
   return menuList;
 }
 
-// 通过path获取父级路径
 export function getParentPaths(routePath: string, routes: MenuItem[]): string[] {
-  // 深度遍历查找
   function dfs(routes: MenuItem[], key: string, parents: string[]) {
     for (let i = 0; i < routes.length; i++) {
       const item = routes[i];
-      // 找到key则返回父级key
+
       if (item.key === key) return [item.key];
-      // children不存在或为空则不递归
+
       if (!item.children || !item.children.length) continue;
-      // 往下查找时将当前key入栈
+
       parents.push(item.key as string);
 
       if (dfs(item.children, key, parents).length) return parents;
-      // 深度遍历查找未找到时当前path 出栈
+
       parents.pop();
     }
-    // 未找到时返回空数组
+
     return [];
   }
   return dfs(routes, routePath, []);
 }
 
-// 查找对应path的路由信息
 export function findRouteByPath(path: Key, routes: MenuItem[]): MenuItem | null {
   const res = routes.find((item) => item.key == path) || null;
   if (res) {
@@ -155,7 +152,6 @@ export function findRouteByPath(path: Key, routes: MenuItem[]): MenuItem | null 
   }
 }
 
-// 拼接路径 伪path resolve
 function pathResolve(...paths: string[]) {
   let resolvePath = '';
   let isAbsolutePath = false;
@@ -181,7 +177,6 @@ function pathResolve(...paths: string[]) {
   return resolvePath;
 }
 
-// 设置完整路由path,
 export function setUpRoutePath(routeList: AsyncRouteType[], pathName = '') {
   for (const node of routeList) {
     if (pathName) {
@@ -194,7 +189,6 @@ export function setUpRoutePath(routeList: AsyncRouteType[], pathName = '') {
   return routeList;
 }
 
-// 扁平路由
 export function formatFlatteningRoutes(routesList: AsyncRouteType[]) {
   if (routesList.length === 0) return routesList;
   let hierarchyList = routesList;

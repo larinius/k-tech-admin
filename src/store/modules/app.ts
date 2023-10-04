@@ -11,14 +11,18 @@ export interface AppConfigMode {
   themeMode: ThemeMode;
   sidebarMode: SidebarMode;
   color: string;
+  selectedPost: number | null;
+  editMode: boolean;
 }
 
 const initialState: AppConfigMode = {
   collapsed: false,
-  locale: 'zh-CN',
+  locale: 'en-US',
   themeMode: 'light',
   sidebarMode: 'vertical',
   color: '#409eff',
+  selectedPost: null,
+  editMode: false,
 };
 
 export const appSlice = createSlice({
@@ -40,10 +44,27 @@ export const appSlice = createSlice({
     setAppColor: (state, action: PayloadAction<string>) => {
       state.color = action.payload;
     },
+    setSelectedPost: (state, action: PayloadAction<number>) => {
+      state.selectedPost = action.payload;
+    },
+    setEditMode: (state, action: PayloadAction<boolean>) => {
+      state.editMode = action.payload;
+
+      if (!action.payload) {
+        state.selectedPost = null;
+      }
+    },
   },
 });
-// 每个 case reducer 函数会生成对应的 Action creators
-export const { setAppCollapsed, setAppColor, setAppLocale, setAppSidebarMode, setAppThemeMode } =
-  appSlice.actions;
+
+export const {
+  setAppCollapsed,
+  setAppColor,
+  setAppLocale,
+  setAppSidebarMode,
+  setAppThemeMode,
+  setSelectedPost,
+  setEditMode,
+} = appSlice.actions;
 
 export default appSlice.reducer;

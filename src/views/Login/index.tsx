@@ -59,7 +59,6 @@ const Login = memo(() => {
       style={{ backgroundColor: thme.token.colorBgContainer, color: thme.token.colorText }}
     >
       <div className="container mx-auto">
-        {/* <img src="@/assets/login/bg.png" class="wave" /> */}
         <div className="wave">
           <div className="bg" style={{ backgroundColor: thme.token.colorBgContainer }} />
           <div className="prospect" style={{ backgroundColor: thme.token.colorPrimary }} />
@@ -74,12 +73,12 @@ const Login = memo(() => {
         </div>
         <div className="login-box">
           <div className="login-form">
-            <h2 className="enter-x p-4">react-xs-admin</h2>
-            <div className="enter-x">用户名：admin 密码：admin123</div>
+            <h2 className="enter-x p-4">K-TECH admin panel</h2>
+            <div className="enter-x">Login：admin Password：admin123</div>
             <div className="input-group user enter-x">
               <UserOutlined className="icon" />
               <div>
-                <h5>用户名</h5>
+                <h5>Login</h5>
                 <input
                   value={user}
                   type="text"
@@ -94,7 +93,7 @@ const Login = memo(() => {
             <div className="input-group pwd enter-x">
               <LockOutlined className="icon" />
               <div>
-                <h5>密码</h5>
+                <h5>Password</h5>
                 <input
                   type="password"
                   value={pwd}
@@ -108,7 +107,7 @@ const Login = memo(() => {
               </div>
             </div>
             <Button className="btn enter-x" type="primary" onClick={() => onLogin()}>
-              登陆
+              Submit
             </Button>
           </div>
         </div>

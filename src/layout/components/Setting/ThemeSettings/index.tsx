@@ -36,11 +36,11 @@ const ThemeSettings = memo(() => {
         })}
       </div>
       <div className="options">
-        <span>灰色模式</span>
+        <span>Gray mode</span>
         <Switch onChange={(e) => themeHtmlClassName('html-grey', e)} />
       </div>
       <div className="options">
-        <span>色弱模式</span>
+        <span>Weak color mode</span>
         <Switch onChange={(e) => themeHtmlClassName('html-weakness', e)} />
       </div>
     </ThemeSettingsDiv>

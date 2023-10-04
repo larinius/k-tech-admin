@@ -1,5 +1,6 @@
 {
-  "api.errorTip": "Error Tip",
+  "api.errorTip": "Error message",
+  "api.successTip": "Success message",
   "api.errMsg401": "The user does not have permission!",
   "api.errMsg403": "The user is authorized, but access is forbidden!",
   "api.errMsg404": "Network request error, the resource was not found!",

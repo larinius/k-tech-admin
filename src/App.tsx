@@ -2,7 +2,6 @@ import { ConfigProvider, theme } from 'antd';
 import dayjs from 'dayjs';
 import 'dayjs/locale/zh-cn';
 import 'dayjs/locale/en';
-import zhCN from 'antd/locale/zh_CN';
 import enUS from 'antd/locale/en_US';
 import 'antd/dist/reset.css';
 import { IntlProvider } from 'react-intl';
@@ -29,13 +28,8 @@ function App() {
 
   const getLocale = useMemo(() => {
     setIntl(locale);
-    if (locale === 'en-US') {
-      dayjs.locale('en');
-      return enUS;
-    } else {
-      dayjs.locale('zh-cn');
-      return zhCN;
-    }
+    dayjs.locale('en');
+    return enUS;
   }, [locale]);
 
   useEffect(() => {

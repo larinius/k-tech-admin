@@ -12,27 +12,27 @@ export const useTabsState = (pathKey: string, openDropdown: boolean) => {
 
   const [rightClickTags] = useState<RightClickTags[]>([
     {
-      text: '刷新',
+      text: 'Refresh',
       disabled: false,
       code: 'refresh',
     },
     {
-      text: '关闭',
+      text: 'Close',
       disabled: false,
       code: 'close',
     },
     {
-      text: '关闭其他标签',
+      text: 'Close Other',
       disabled: false,
       code: 'closeOther',
     },
     {
-      text: '关闭左侧其他标签',
+      text: 'Turn off other tabs on the left',
       disabled: false,
       code: 'closeLeftOther',
     },
     {
-      text: '关闭右侧其他标签',
+      text: 'Turn off other tabs on the right',
       disabled: false,
       code: 'closeRightOther',
     },

@@ -16,7 +16,7 @@ const Permissions = () => {
 
   return (
     <Button type="primary" onClick={setCount}>
-      {power} 切换权限
+      {power} Switch permissions
     </Button>
   );
 };

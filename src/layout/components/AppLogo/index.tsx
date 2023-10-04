@@ -12,7 +12,7 @@ const AppLogo = memo(() => {
         <Image width={38} src={logo} preview={false} />
       </div>
       <div className="name" style={{ color: thme.token.colorText }}>
-        xiaosiAdmin
+        K-TECH admin
       </div>
     </div>
   );
