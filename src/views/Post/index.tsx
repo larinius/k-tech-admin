@@ -18,6 +18,7 @@ const PostPage = ({ id }: { id: number | null }) => {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
   const app = useAppSelector((state) => state.app);
+  const user = useAppSelector((state) => state.user);
   const { categories } = useCategories();
   const { refetch: refetchAllPosts } = usePosts();
 
@@ -57,7 +58,7 @@ const PostPage = ({ id }: { id: number | null }) => {
     formData.append('title', values.title);
     formData.append('content', values.content);
     formData.append('category', `${selectedCategory}`);
-    formData.append('author', '1');
+    formData.append('author', `${post.author}`);
 
     if (imageFile) {
       formData.append('image', imageFile);
@@ -69,7 +70,7 @@ const PostPage = ({ id }: { id: number | null }) => {
         refetchAllPosts();
         createSuccessModal('Post updated!');
       })
-      .catch((error) => {
+      .catch((error: any) => {
         createErrorModal('Error updating post');
       });
   };
@@ -81,7 +82,7 @@ const PostPage = ({ id }: { id: number | null }) => {
     formData.append('title', values.title);
     formData.append('content', values.content);
     formData.append('category', `${selectedCategory}`);
-    formData.append('author', '1');
+    formData.append('author', `${user.userInfo?.userid}`);
 
     if (imageFile) {
       formData.append('image', imageFile);
